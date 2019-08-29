@@ -2,23 +2,23 @@
 # @Author: JanKinCai
 # @Date:   2019-08-29 16:10:39
 # @Last Modified by:   caizhengxin@bolean.com.cn
-# @Last Modified time: 2019-08-29 16:12:52
+# @Last Modified time: 2019-08-29 18:04:04
 try:
     from setuptools import Extension, setup, find_packages
 except ImportError as e:
     from distutils.core import Extension, setup, find_packages
 
 
-__version__ = "0.0.1"
+__version__ = "{{ cookiecutter.version }}"
 
 
 setup(
-    name="bolean-replay",
+    name="{{ cookiecutter.project_name }}",
     version=__version__,
-    author='JanKin Cai',
-    author_email='caizhengxin@bolean.com.cn',
-    maintainer="JanKin Cai",
-    maintainer_email='caizhengxin@bolean.com.cn',
+    author="{{ cookiecutter.author_name }}",
+    author_email="{{ cookiecutter.email }}",
+    maintainer="{{ cookiecutter.author_name }}",
+    maintainer_email="{{ cookiecutter.email }}",
     url="https://gitee.com/BoleanTech/bolean_replay",
     download_url="https://gitee.com/BoleanTech/bolean_replay.git",
     description=__doc__,
