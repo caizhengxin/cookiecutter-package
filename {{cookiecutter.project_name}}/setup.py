@@ -2,7 +2,7 @@
 # @Author: JanKinCai
 # @Date:   2019-08-29 16:10:39
 # @Last Modified by:   caizhengxin@bolean.com.cn
-# @Last Modified time: 2019-08-29 18:04:04
+# @Last Modified time: 2019-08-30 09:20:12
 try:
     from setuptools import Extension, setup, find_packages
 except ImportError as e:
@@ -19,8 +19,8 @@ setup(
     author_email="{{ cookiecutter.email }}",
     maintainer="{{ cookiecutter.author_name }}",
     maintainer_email="{{ cookiecutter.email }}",
-    url="https://gitee.com/BoleanTech/bolean_replay",
-    download_url="https://gitee.com/BoleanTech/bolean_replay.git",
+    # url="",
+    # download_url="",
     description=__doc__,
     zip_safe=False,
     packages=find_packages(),
