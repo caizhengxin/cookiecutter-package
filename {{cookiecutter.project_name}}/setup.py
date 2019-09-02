@@ -19,7 +19,7 @@ setup(
     long_description="",
     keywords=[
         "{{ cookiecutter.project_name }}",
-        "{{ cookiecutter.project_packet_name }}",
+        "{{ cookiecutter.project_slug }}",
     ],
     zip_safe=False,
     packages=find_packages(),
