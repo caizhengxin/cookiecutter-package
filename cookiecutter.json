@@ -5,6 +5,11 @@
     "author_name": "JanKinCai",
     "email": "{{ cookiecutter.author_name.lower()|replace(' ', '-') }}@example.com",
     "version": "0.1.0",
+    "code_hosting": [
+        "github",
+        "gitee",
+    ],
+    "code_hosting_username": "JanKinCai",
     "open_source_license": [
         "MIT",
         "BSD",
