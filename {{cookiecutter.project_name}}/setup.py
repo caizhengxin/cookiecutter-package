@@ -70,20 +70,3 @@ setup(
         'License :: OSI Approved :: {{ cookiecutter.open_source_license }} License',
     ],
 )
-
-
-"""
-python setup.py build            仅编译，不安装
-python setup.py sdist            生成压缩包(zip/tar.gz)
-python setup.py bdist_wininst    生成exe
-python setup.py bdist_rpm        生成rpm包
-python setup.py bdist_wheel      生成wheel
-
-python setup.py bdist --formats= rpm
-                                 gztar
-                                 bztar
-                                 ztar
-                                 tar
-                                 wininst
-                                 zip
-"""
