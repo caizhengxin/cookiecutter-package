@@ -5,7 +5,8 @@ from setuptools import setup, find_packages
 # from pkg_resources import resource_string
 {% if cookiecutter.use_cython == 'y' %}
 from setuptools import Extension
-from Cython.Distutils import cythonize, build_ext
+from Cython.Build import cythonize
+from Cython.Distutils import build_ext
 {% endif %}
 
 url = "https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}"
@@ -78,10 +79,10 @@ setup(
         "Cython",
     ],
 
-    # project_urls = {
-    #     "Documentation": "",
-    #     "Source Code": "",
-    # },
+    project_urls={
+        "Documentation": "",
+        "Source Code": "https://{{ cookiecutter.project_name }}.readthedocs.io",
+    },
 
     # dependency_links=[],
     # extras_require=[],
