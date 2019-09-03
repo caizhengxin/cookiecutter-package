@@ -1,12 +1,29 @@
 # -*- coding: utf-8 -*-
+import os
 
 from setuptools import setup, find_packages
 # from pkg_resources import resource_string
-# from setuptools import Extension
+{% if cookiecutter.use_cython == 'y' %}
+from setuptools import Extension
+from Cython.Distutils import cythonize, build_ext
+{% endif %}
 
+url = "https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}"
 
-url = "https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/" \
-    "{{ cookiecutter.project_name }}"
+{% if cookiecutter.use_cython == 'y' %}
+ext_modules = [
+    Extension(
+        "*",
+        sources=["{}/{}".format(directory, file)],
+        libraries=["m"],
+        # include_dirs=["src"],
+        # extra_compile_args=[],
+        # extra_link_args=[],
+    )
+    for directory, dirs, files in os.walk("{{ cookiecutter.project_slug }}")
+    for file in files if ".pyx" in file
+]
+{% endif %}
 
 
 setup(
@@ -27,16 +44,22 @@ setup(
     ],
     zip_safe=False,
     packages=find_packages(),
-    # cmdclass="",
+    {% if cookiecutter.use_cython == 'y' %}
+    cmdclass={
+        "build_ext": build_ext
+    },
+    ext_modules=cythonize(ext_modules),
+    {% endif %}
     install_requires=[
     ],
 
-    # entry_points={
-    #     "console_scripts": [
-    #     ],
-    #     "gui_scripts": [
-    #     ],
-    # },
+    entry_points={
+        "console_scripts": [
+            "{{ cookiecutter.project_slug }} = {{ cookiecutter.project_slug }}.command:main",
+        ],
+        # "gui_scripts": [
+        # ],
+    },
 
     # package_data={
     #     "": ["*.txt"],
@@ -44,19 +67,15 @@ setup(
     include_package_data=True,  # MANIFEST.in
     # exclude_packet_data=[],
     # data_files=[],
-
-    # ext_modules=[]  # 指定扩展模块
-
-    # 指定可执行脚本,安装时脚本会被安装到系统 PATH 路径下
     # scripts=["xxx.py"],
 
-    # package_dir=[],  # 指定哪些目录下的文件被映射到哪个源码包
-    # requires=[],  # 指定依赖的其他包
-    # provides=[],  # 指定可以为哪些模块提供依赖
+    # package_dir=[],
+    # requires=[],
+    # provides=[],
 
-    # 指定运行 setup.py 文件本身所依赖的包
     setup_requires=[
         "setuptools",
+        "Cython",
     ],
 
     # project_urls = {
@@ -64,8 +83,8 @@ setup(
     #     "Source Code": "",
     # },
 
-    # dependency_links=[],  # 指定依赖包的下载地址
-    # extras_require=[],  # 当前包的高级/额外特性需要依赖的分发包
+    # dependency_links=[],
+    # extras_require=[],
 
     platforms="any",
     classifiers=[

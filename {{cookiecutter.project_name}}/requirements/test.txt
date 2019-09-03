@@ -1,2 +1,4 @@
 -r bast.txt
+pytest
 coverage
+tox

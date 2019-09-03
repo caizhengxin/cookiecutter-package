@@ -2,7 +2,7 @@
 
 ## 概述
 
-Python第三方库模板
+Python package template
 
 ## 安装
 
@@ -15,3 +15,11 @@ cookiecutter https://github.com/caizhengxin/cookiecutter-package.git
 
 cookiecutter https://gitee.com/JanKinCai/cookiecutter-package.git
 ```
+
+## Feature
+
+- Cython
+- Sphinx
+- Travis CI
+- pre-commit
+- tox
