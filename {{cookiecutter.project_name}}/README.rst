@@ -7,7 +7,7 @@
 .. image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_name }}.svg
         :target: https://pypi.python.org/pypi/{{ cookiecutter.project_name }}
 
-.. image:: https://img.shields.io/travis/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}.svg
+.. image:: https://api.travis-ci.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}.svg
         :target: https://travis-ci.org/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}
 
 .. image:: https://readthedocs.org/projects/{{ cookiecutter.project_name }}/badge/?version=latest
