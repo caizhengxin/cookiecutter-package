@@ -1,4 +1,4 @@
--r bast.txt
+-r base.txt
 pytest
 coverage
 tox

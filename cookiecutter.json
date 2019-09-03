@@ -7,7 +7,8 @@
     "version": "0.1.0",
     "code_hosting": [
         "github",
-        "gitee"
+        "gitee",
+        "gitlab"
     ],
     "code_hosting_username": "JanKinCai",
     "open_source_license": [
