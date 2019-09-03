@@ -5,6 +5,10 @@ from setuptools import setup, find_packages
 # from setuptools import Extension
 
 
+url = "https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/" \
+    "{{ cookiecutter.project_name }}"
+
+
 setup(
     name="{{ cookiecutter.project_name }}",
     version="{{ cookiecutter.version }}",
@@ -12,7 +16,7 @@ setup(
     author_email="{{ cookiecutter.email }}",
     maintainer="{{ cookiecutter.author_name }}",
     maintainer_email="{{ cookiecutter.email }}",
-    url="https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}",
+    url=url,
     download_url=url + ".git",
     license="{{ cookiecutter.open_source_license }}",
     description="{{ cookiecutter.description }}",

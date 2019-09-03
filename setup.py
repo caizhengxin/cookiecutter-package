@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: JanKinCai
 # @Date:   2019-09-02 20:12:27
-# @Last Modified by:   caizhengxin16@163.com
-# @Last Modified time: 2019-09-02 20:14:54
+# @Last Modified by:   caizhengxin@bolean.com.cn
+# @Last Modified time: 2019-09-03 09:20:23
 from setuptools import setup
 
 
@@ -14,7 +14,7 @@ setup(
     author='JanKin Cai',
     license='BSD',
     author_email='jankincai12@gmail.com',
-    url='https://gitee.com/JanKinCai/cookiecutter-package',
+    url='https://github.com/caizhengxin/cookiecutter-package',
     keywords=['cookiecutter', 'template', 'package', ],
     classifiers=[
         'Development Status :: 4 - Beta',
