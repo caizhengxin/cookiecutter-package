@@ -14,10 +14,6 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('.'))
 
-import sphinx_rtd_theme
-
-import {{ cookiecutter.project_slug }}
-
 
 # -- Project information -----------------------------------------------------
 
@@ -26,8 +22,8 @@ copyright = "{% now 'local', '%Y' %}, {{ cookiecutter.author_name }}"
 author = '{{ cookiecutter.author_name }}'
 
 # The full version, including alpha/beta/rc tags
-version = {{ cookiecutter.project_slug }}.__version__
-release = {{ cookiecutter.project_slug }}.__version__
+version = "{{ cookiecutter.version }}"
+release = "{{ cookiecutter.version }}"
 
 
 # -- General configuration ---------------------------------------------------
