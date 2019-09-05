@@ -23,3 +23,6 @@ cookiecutter https://gitee.com/JanKinCai/cookiecutter-package.git
 - Travis CI
 - pre-commit
 - tox
+- Bumpversion
+- pytest
+- flake8

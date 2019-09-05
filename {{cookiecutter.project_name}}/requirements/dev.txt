@@ -7,3 +7,4 @@ mock
 sphinxcontrib.napoleon
 
 pre-commit
+bumpversion
