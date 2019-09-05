@@ -8,9 +8,6 @@ from setuptools import Extension
 from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 {% endif %}
-
-url = "https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}"
-
 {% if cookiecutter.use_cython == 'y' %}
 ext_modules = [
     Extension(
@@ -34,8 +31,8 @@ setup(
     author_email="{{ cookiecutter.email }}",
     maintainer="{{ cookiecutter.author_name }}",
     maintainer_email="{{ cookiecutter.email }}",
-    url=url,
-    download_url=url + ".git",
+    url="https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}",
+    download_url="https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}.git",
     license="{{ cookiecutter.open_source_license }}",
     description="{{ cookiecutter.description }}",
     long_description="{{ cookiecutter.description }}",
