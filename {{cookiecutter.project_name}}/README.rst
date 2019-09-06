@@ -18,8 +18,9 @@
 {{ cookiecutter.description }}
 
 {% if is_open_source %}
-* Free software: {{ cookiecutter.open_source_license }}
+* Github repo: "https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}"
 * Documentation: https://{{ cookiecutter.project_name }}.readthedocs.io.
+* Free software: {{ cookiecutter.open_source_license }}
 {% endif %}
 
 Features
