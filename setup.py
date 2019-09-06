@@ -14,8 +14,13 @@ setup(
     author='JanKin Cai',
     license='BSD',
     author_email='jankincai12@gmail.com',
-    url='https://gitee.com/JanKinCai/cookiecutter-package',
-    keywords=['cookiecutter', 'template', 'package', ],
+    url='https://github.com/caizhengxin/cookiecutter-package',
+    keywords=[
+        'cookiecutter',
+        'template',
+        'package',
+        'cookiecutter-package'
+    ],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
