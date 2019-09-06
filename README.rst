@@ -2,7 +2,8 @@
 Cookiecutter Package
 ====================
 
-.. image:: https://travis-ci.org/caizhengxin/cookiecutter-package.svg?branch=master
+.. image:: https://api.travis-ci.com/caizhengxin/cookiecutter-package.svg
+        :target: https://travis-ci.org/caizhengxin/cookiecutter-package
 
 Cookiecutter_ template for a Python package.
 
@@ -25,12 +26,10 @@ Features
 Installation
 ------------
 
-```
-pip3 install cookiecutter
+.. code-block: console
+	pip3 install cookiecutter
 
-cookiecutter https://github.com/caizhengxin/cookiecutter-package.git
-```
-
+	cookiecutter https://github.com/caizhengxin/cookiecutter-package.git
 
 .. _Cython: https://cython.org/
 .. _Sphinx: http://sphinx-doc.org/
