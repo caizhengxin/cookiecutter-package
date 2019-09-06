@@ -26,7 +26,7 @@ Features
 Installation
 ------------
 
-.. code-block: console
+.. code-block:: console
 	pip3 install cookiecutter
 
 	cookiecutter https://github.com/caizhengxin/cookiecutter-package.git
