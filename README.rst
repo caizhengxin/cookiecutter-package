@@ -27,8 +27,8 @@ Installation
 ------------
 
 .. code-block:: console
-	$ pip3 install cookiecutter
 
+	$ pip3 install cookiecutter
 	$ cookiecutter https://github.com/caizhengxin/cookiecutter-package.git
 
 .. _Cython: https://cython.org/
