@@ -22,6 +22,8 @@ Features
 * Bumpversion_
 * Pytest_
 * Flake8_
+* Github/Gitee/Gitlab
+* Logging_
 
 Installation
 ------------
@@ -42,3 +44,4 @@ Installation
 .. _Flake8: https://gitlab.com/pycqa/flake8/
 .. _PyPi: https://pypi.python.org/pypi/
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _Logging: https://docs.python.org/3.6/library/logging.html
