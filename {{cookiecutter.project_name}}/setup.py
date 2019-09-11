@@ -8,10 +8,16 @@ from setuptools import Extension
 from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 {% endif %}
+
+# Extension
 {% if cookiecutter.use_cython == 'y' %}
+USE_CYTHON = False
+
+ext = ".pyx" if USE_CYTHON else ".c"
+
 ext_modules = [
     Extension(
-        "*",
+        "{}/{}".format(directory, file.split(".")[0]),
         sources=["{}/{}".format(directory, file)],
         libraries=["m"],
         # include_dirs=["src"],
@@ -19,10 +25,12 @@ ext_modules = [
         # extra_link_args=[],
     )
     for directory, dirs, files in os.walk("{{ cookiecutter.project_slug }}")
-    for file in files if ".pyx" in file
+    for file in files if ext in file
+    if '__pycache__' not in directory
 ]
-{% endif %}
 
+ext_modules = cythonize(ext_modules) if USE_CYTHON else ext_modules
+{% endif %}
 
 setup(
     name="{{ cookiecutter.project_name }}",
@@ -42,12 +50,10 @@ setup(
     ],
     zip_safe=False,
     packages=find_packages(),
-    {% if cookiecutter.use_cython == 'y' %}
-    cmdclass={
+    {% if cookiecutter.use_cython == 'y' %}cmdclass={
         "build_ext": build_ext
     },
-    ext_modules=cythonize(ext_modules),
-    {% endif %}
+    ext_modules=ext_modules,{% endif %}
     install_requires=[
     ],
 
@@ -58,16 +64,9 @@ setup(
         # "gui_scripts": [
         # ],
     },
-
-    # package_data={
-    #     "": ["*.txt"],
-    # },
     include_package_data=True,  # MANIFEST.in
-    # exclude_packet_data=[],
-    # data_files=[],
-    # scripts=["xxx.py"],
 
-    # package_dir=[],
+    # scripts=["xxx.py"],
     # requires=[],
     # provides=[],
 
@@ -77,8 +76,8 @@ setup(
     ],
 
     project_urls={
-        "Documentation": "",
-        "Source Code": "https://{{ cookiecutter.project_name }}.readthedocs.io",
+        "Documentation": "https://{{ cookiecutter.project_name }}.readthedocs.io",
+        "Source Code": "https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}",
     },
 
     # dependency_links=[],
@@ -86,8 +85,18 @@ setup(
 
     platforms="any",
     classifiers=[
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
+        'Development Status :: 4 - Beta',
+        'Operating System :: OS Independent',
+        'Intended Audience :: Developers',
         'License :: OSI Approved :: {{ cookiecutter.open_source_license }} License',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: Implementation',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Topic :: Software Development :: Libraries'
     ],
 )
