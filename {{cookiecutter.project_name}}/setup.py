@@ -17,7 +17,7 @@ ext = ".pyx" if USE_CYTHON else ".c"
 
 ext_modules = [
     Extension(
-        "{}/{}".format(directory, file.split(".")[0]),
+        "{}/{}".format(directory, file.split(".")[0]).replace("/", "."),
         sources=["{}/{}".format(directory, file)],
         libraries=["m"],
         # include_dirs=["src"],
