@@ -1,0 +1,40 @@
+# -*- coding: utf-8 -*-
+from __future__ import print_function
+
+{% set name = cookiecutter.project_slug.capitalize() | replace('_', '') | replace('-','') -%}
+{% if cookiecutter.use_cython == 'y' %}
+cdef class {{ name }}(object):
+    """
+    {{ name }}
+
+    :param xxx: xxxx
+    """
+
+    def __init__(self, *args, **kwargs):
+        """
+        init
+        """
+
+        pass
+
+    def __dealloc__(self):
+        """
+        deallock
+        """
+
+        pass
+{% else %}
+cdef class {{ name }}(object):
+    """
+    {{ name }}
+
+    :param xxx: xxxx
+    """
+
+    def __init__(self, *args, **kwargs):
+        """
+        init
+        """
+
+        pass
+{% endif%}

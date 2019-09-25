@@ -1,0 +1,6 @@
+{% set name = cookiecutter.project_slug.capitalize() | replace('_', '') | replace('-','') -%}
+
+{% if cookiecutter.use_cython == 'y' %}
+cdef class {{ name }}(object):
+    pass
+{% endif%}
