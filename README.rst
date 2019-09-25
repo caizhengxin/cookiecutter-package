@@ -33,7 +33,7 @@ Installation
 	$ pip3 install cookiecutter
 	$ cookiecutter https://github.com/caizhengxin/cookiecutter-package.git
 
-pypi
+Pypi
 ----
 
 Setting ``vim ~/.pypirc``::
@@ -51,6 +51,11 @@ Setting ``vim ~/.pypirc``::
     $ python3 setup sdist
     $ twine upload dist/*
 
+Demo
+----
+
+* python-libpcap_
+
 .. _Cython: https://cython.org/
 .. _Sphinx: http://sphinx-doc.org/
 .. _Travis-CI: http://travis-ci.org/
@@ -63,3 +68,4 @@ Setting ``vim ~/.pypirc``::
 .. _PyPi: https://pypi.python.org/pypi/
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _Logging: https://docs.python.org/3.6/library/logging.html
+.. _python-libpcap: https://github.com/caizhengxin/python-libpcap
