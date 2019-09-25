@@ -1,6 +1,6 @@
 {% set is_open_source = cookiecutter.open_source_license != 'Not open source' -%}
 {% for _ in cookiecutter.project_name %}={% endfor %}
-{{ cookiecutter.project_name }}
+{{ cookiecutter.project_name.capitalize()|replace('-', ' ') }}
 {% for _ in cookiecutter.project_name %}={% endfor %}
 
 {% if is_open_source %}
@@ -19,7 +19,7 @@
 {{ cookiecutter.description }}
 
 {% if is_open_source %}
-* Github repo: "https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}"
+* Github repo: https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}
 * Documentation: https://{{ cookiecutter.project_name }}.readthedocs.io
 * Free software: {{ cookiecutter.open_source_license }}
 {% endif %}

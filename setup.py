@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Author: JanKinCai
 # @Date:   2019-09-02 20:12:27
-# @Last Modified by:   caizhengxin@bolean.com.cn
+# @Last Modified by:   jankincai12@gmail.com
 # @Last Modified time: 2019-09-03 09:20:23
 from setuptools import setup
 
@@ -19,7 +19,14 @@ setup(
         'cookiecutter',
         'template',
         'package',
-        'cookiecutter-package'
+        'cython',
+        'python',
+        'cookiecutter-package',
+        'cookiecutter-cython',
+        'cookiecutter-python',
+        'cookiecutter-python-package',
+        'cookiecutter-pypackage',
+        'cookiecutter-package-python'
     ],
     classifiers=[
         'Development Status :: 4 - Beta',
