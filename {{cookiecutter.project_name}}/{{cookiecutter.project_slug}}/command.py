@@ -1,13 +1,22 @@
 # -*- coding: utf-8 -*-
-# @Author: JanKinCai
-# @Date:   2019-09-03 09:50:27
-# @Last Modified by:   caizhengxin@bolean.com.cn
-# @Last Modified time: 2019-09-03 09:56:56
 import argparse
 
 
 def main():
     """
+    {{ cookiecutter.project_name.capitalize() }}
+
+    :param output: Output file.
     """
 
-    pass
+    parser = argparse.ArgumentParser(description="{{ cookiecutter.project_name.capitalize() | replace('-', ' ') | replace('_', ' ')}}")
+    parser.add_argument("-o", "--output", type=str, help="Output file.")
+    args = parser.parse_args()
+
+    print("[+]:", args)
+
+    print("[+]:", args.output)
+
+
+if __name__ == "__main__":
+    main()
