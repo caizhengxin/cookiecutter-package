@@ -33,6 +33,24 @@ Installation
 	$ pip3 install cookiecutter
 	$ cookiecutter https://github.com/caizhengxin/cookiecutter-package.git
 
+pypi
+----
+
+Setting ``vim ~/.pypirc``::
+
+    [distutils]
+    index-server=pypi
+
+    [pypi]
+    username=
+    password=
+
+.. code-block:: console
+
+    $ pip3 install twine
+    $ python3 setup sdist
+    $ twine upload dist/*
+
 .. _Cython: https://cython.org/
 .. _Sphinx: http://sphinx-doc.org/
 .. _Travis-CI: http://travis-ci.org/
