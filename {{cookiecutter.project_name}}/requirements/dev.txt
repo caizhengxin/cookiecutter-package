@@ -1,10 +1,13 @@
--r base.txt
-flake8
+-r test.txt
+-r production.txt
 
-sphinx
-sphinx_rtd_theme
-mock
-sphinxcontrib.napoleon
+sphinx>=2.2.0
+sphinx_rtd_theme>=0.4.3
+mock>=3.0.5
+sphinxcontrib.napoleon>=0.7
 
-pre-commit
-bumpversion
+pre-commit>=1.18.3
+bumpversion>=0.5.3
+{% if cookiecutter.use_cython == 'y' %}
+Cython>=0.29.13
+{% endif %}

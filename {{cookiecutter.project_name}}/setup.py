@@ -11,7 +11,7 @@ from Cython.Distutils import build_ext
 
 # Extension
 {% if cookiecutter.use_cython == 'y' %}
-USE_CYTHON = False
+USE_CYTHON = True
 
 ext = ".pyx" if USE_CYTHON else ".c"
 
