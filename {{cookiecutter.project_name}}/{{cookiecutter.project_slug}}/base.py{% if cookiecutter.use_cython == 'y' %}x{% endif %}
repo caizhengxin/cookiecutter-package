@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from __future__ import print_function
 
 {% set name = cookiecutter.project_slug.capitalize() | replace('_', '') | replace('-','') -%}
