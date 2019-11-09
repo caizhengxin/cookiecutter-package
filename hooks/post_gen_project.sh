@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set +xe
+set -xe
 
 git init
 

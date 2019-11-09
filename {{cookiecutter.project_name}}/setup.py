@@ -1,19 +1,43 @@
 # -*- coding: utf-8 -*-
 import os
+import glob
 
 from setuptools import setup, find_packages
-# from pkg_resources import resource_string
-{% if cookiecutter.use_cython == 'y' %}
-from setuptools import Extension
+{% if cookiecutter.use_cython == 'y' %}from setuptools import Extension
 from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 {% endif %}
 
-# Extension
-{% if cookiecutter.use_cython == 'y' %}
-USE_CYTHON = True
+with open('README.rst') as f:
+    long_description = f.read()
 
-ext = ".pyx" if USE_CYTHON else ".c"
+
+def read_requirements(path):
+    """
+    递归读取requirements
+
+    :param path: path
+    """
+
+    requires = []
+
+    with open(path) as f:
+        install_requires = f.read().split("\n")
+
+        for ir in install_requires:
+            if "-r" in ir:
+                path = os.path.join(os.path.split(path)[0], ir.split(" ")[1])
+                requires.extend(read_requirements(path))
+            else:
+                ir and requires.append(ir)
+
+    return requires
+
+{% if cookiecutter.use_cython == 'y' %}
+# local or publish
+USE_CYTHON = False if glob.glob("{{ cookiecutter.project_slug }}/*.c") else True
+ext = '.pyx' if USE_CYTHON else '.c'
+
 
 ext_modules = [
     Extension(
@@ -25,8 +49,7 @@ ext_modules = [
         # extra_link_args=[],
     )
     for directory, dirs, files in os.walk("{{ cookiecutter.project_slug }}")
-    for file in files if ext in file
-    if '__pycache__' not in directory
+    for file in files if ext in file and ".pyc" not in file
 ]
 
 ext_modules = cythonize(ext_modules) if USE_CYTHON else ext_modules
@@ -43,7 +66,7 @@ setup(
     download_url="https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}.git",
     license="{{ cookiecutter.open_source_license }}",
     description="{{ cookiecutter.description }}",
-    long_description="{{ cookiecutter.description }}",
+    long_description=long_description,
     keywords=[
         "{{ cookiecutter.project_name }}",
         "{{ cookiecutter.project_slug }}",
@@ -54,35 +77,22 @@ setup(
         "build_ext": build_ext
     },
     ext_modules=ext_modules,{% endif %}
-    install_requires=[
-    ],
-
+    install_requires=read_requirements("requirements/publish.txt"),
     entry_points={
         "console_scripts": [
             "{{ cookiecutter.project_slug }} = {{ cookiecutter.project_slug }}.command:main",
         ],
-        # "gui_scripts": [
-        # ],
     },
     include_package_data=True,  # MANIFEST.in
-
     # scripts=["xxx.py"],
-    # requires=[],
-    # provides=[],
-
     setup_requires=[
         "setuptools",
         "Cython",
     ],
-
     project_urls={
         "Documentation": "https://{{ cookiecutter.project_name }}.readthedocs.io",
         "Source Code": "https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}",
     },
-
-    # dependency_links=[],
-    # extras_require=[],
-
     platforms="any",
     classifiers=[
         'Development Status :: 4 - Beta',

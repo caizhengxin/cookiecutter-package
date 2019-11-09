@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # @Author: JanKinCai
 # @Date:   2019-09-02 20:12:27
-# @Last Modified by:   jankincai12@gmail.com
-# @Last Modified time: 2019-09-03 09:20:23
+# @Last Modified by:   JanKinCai
+# @Last Modified time: 2019-11-07 09:06:11
 from setuptools import setup
 
 
