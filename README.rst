@@ -3,7 +3,13 @@ Cookiecutter Package
 ====================
 
 .. image:: https://api.travis-ci.com/caizhengxin/cookiecutter-package.svg
-        :target: https://travis-ci.org/caizhengxin/cookiecutter-package
+    :target: https://travis-ci.org/caizhengxin/cookiecutter-package
+
+.. image:: https://img.shields.io/github/languages/code-size/caizhengxin/python-libpcap
+    :target: https://github.com/caizhengxin/python-libpcap
+
+.. image:: https://img.shields.io/pypi/l/python-libpcap
+    :target: https://github.com/caizhengxin/python-libpcap/master/LICENSE
 
 Cookiecutter_ template for a Python package.
 
