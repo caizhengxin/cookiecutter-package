@@ -21,7 +21,7 @@ Features
 --------
 
 * Cython_
-* Sphinx_
+* Sphinx_ + ReadTheDocs_
 * Travis-CI_
 * Pre-commit_
 * Tox_
