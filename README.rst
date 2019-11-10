@@ -8,9 +8,6 @@ Cookiecutter Package
 .. image:: https://img.shields.io/github/languages/code-size/caizhengxin/cookiecutter-package
     :target: https://github.com/caizhengxin/cookiecutter-package
 
-.. image:: https://img.shields.io/pypi/l/cookiecutter-package
-    :target: https://github.com/caizhengxin/cookiecutter-package/blob/master/LICENSE
-
 Cookiecutter_ template for a Python package.
 
 * Github repo: https://github.com/caizhengxin/cookiecutter-package/

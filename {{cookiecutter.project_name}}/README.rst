@@ -14,8 +14,8 @@
 .. image:: https://img.shields.io/pypi/dm/python-libpcap.svg
         :target: https://pypi/python.org/pypi/python-libpcap
 {% if cookiecutter.code_hosting == 'github' %}
-.. image:: https://api.travis-ci.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}.svg
-        :target: https://travis-ci.org/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}
+.. image:: https://api.travis-ci.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}.svg?branch=master
+        :target: https://travis-ci.org/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}/?branch=master
 
 .. image:: https://readthedocs.org/projects/{{ cookiecutter.project_name }}/badge/?version=latest
         :target: https://{{ cookiecutter.project_name }}.readthedocs.io/en/latest/?badge=latest

@@ -35,7 +35,7 @@ def read_requirements(path):
 
 {% if cookiecutter.use_cython == 'y' %}
 # local or publish
-USE_CYTHON = False if glob.glob("{{ cookiecutter.project_slug }}/*.c") else True
+USE_CYTHON = True if glob.glob("{{ cookiecutter.project_slug }}/*.pyx") else False
 ext = '.pyx' if USE_CYTHON else '.c'
 
 
