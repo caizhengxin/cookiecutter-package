@@ -9,7 +9,7 @@ from setuptools import setup
 setup(
     name='cookiecutter-package',
     packages=[],
-    version='0.1.1',
+    version='0.1.2',
     description='Cookiecutter template for a Python package',
     author='JanKinCai',
     license='BSD',
