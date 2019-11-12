@@ -8,11 +8,11 @@
         :target: https://pypi.python.org/pypi/{{ cookiecutter.project_name }}
 {%- endif %}
 
-.. image:: https://img.shields.io/pypi/pyversions/python-libpcap.svg
-        :target: https://pypi/python.org/pypi/python-libpcap
+.. image:: https://img.shields.io/pypi/pyversions/{{ cookiecutter.project_name }}.svg
+        :target: https://pypi/python.org/pypi/{{ cookiecutter.project_name }}
 
-.. image:: https://img.shields.io/pypi/dm/python-libpcap.svg
-        :target: https://pypi/python.org/pypi/python-libpcap
+.. image:: https://img.shields.io/pypi/dm/{{ cookiecutter.project_name }}.svg
+        :target: https://pypi/python.org/pypi/{{ cookiecutter.project_name }}
 {% if cookiecutter.code_hosting == 'github' %}
 .. image:: https://api.travis-ci.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}.svg?branch=master
         :target: https://travis-ci.org/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}/?branch=master
@@ -21,11 +21,11 @@
         :target: https://{{ cookiecutter.project_name }}.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 {% endif %}
-.. image:: https://img.shields.io/github/languages/code-size/caizhengxin/python-libpcap
-        :target: https://github.com/caizhengxin/python-libpcap
+.. image:: https://img.shields.io/github/languages/code-size/caizhengxin/{{ cookiecutter.project_name }}
+        :target: https://github.com/caizhengxin/{{ cookiecutter.project_name }}
 
-.. image:: https://img.shields.io/pypi/l/python-libpcap
-        :target: https://github.com/caizhengxin/python-libpcap/blob/master/LICENSE
+.. image:: https://img.shields.io/pypi/l/{{ cookiecutter.project_name }}
+        :target: https://github.com/caizhengxin/{{ cookiecutter.project_name }}/blob/master/LICENSE
 
 {{ cookiecutter.description }}
 
