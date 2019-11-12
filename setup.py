@@ -2,14 +2,14 @@
 # @Author: JanKinCai
 # @Date:   2019-09-02 20:12:27
 # @Last Modified by:   JanKinCai
-# @Last Modified time: 2019-11-07 09:06:11
+# @Last Modified time: 2019-11-12 21:21:59
 from setuptools import setup
 
 
 setup(
     name='cookiecutter-package',
     packages=[],
-    version='0.2.0',
+    version='0.2.1',
     description='Cookiecutter template for a Python package',
     author='JanKinCai',
     license='BSD',
