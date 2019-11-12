@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-import glob
+{% if cookiecutter.use_cython == 'y' %}import glob{% endif %}
 
 from setuptools import setup, find_packages
 {% if cookiecutter.use_cython == 'y' %}from setuptools import Extension
@@ -32,8 +32,8 @@ def read_requirements(path):
                 ir and requires.append(ir)
 
     return requires
-
 {% if cookiecutter.use_cython == 'y' %}
+
 # local or publish
 USE_CYTHON = True if glob.glob("{{ cookiecutter.project_slug }}/*.pyx") else False
 ext = '.pyx' if USE_CYTHON else '.c'
@@ -53,8 +53,8 @@ ext_modules = [
 ]
 
 ext_modules = cythonize(ext_modules) if USE_CYTHON else ext_modules
-{% endif %}
 
+{% endif %}
 setup(
     name="{{ cookiecutter.project_name }}",
     version="{{ cookiecutter.version }}",
@@ -73,9 +73,7 @@ setup(
     ],
     zip_safe=False,
     packages=find_packages(),
-    {% if cookiecutter.use_cython == 'y' %}cmdclass={
-        "build_ext": build_ext
-    },
+    {% if cookiecutter.use_cython == 'y' %}cmdclass={"build_ext": build_ext},
     ext_modules=ext_modules,{% endif %}
     install_requires=read_requirements("requirements/publish.txt"),
     entry_points={

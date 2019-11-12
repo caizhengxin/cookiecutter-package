@@ -23,7 +23,7 @@ cdef class {{ name }}(object):
 
         pass
 {% else %}
-cdef class {{ name }}(object):
+class {{ name }}(object):
     """
     {{ name }}
 
@@ -35,5 +35,4 @@ cdef class {{ name }}(object):
         init
         """
 
-        pass
-{% endif%}
+        pass{% endif%}
