@@ -55,7 +55,6 @@ ext_modules = [
 ext_modules = cythonize(ext_modules) if USE_CYTHON else ext_modules
 
 {% endif %}
-
 setup(
     name="{{ cookiecutter.project_name }}",
     version="{{ cookiecutter.version }}",
@@ -74,9 +73,7 @@ setup(
     ],
     zip_safe=False,
     packages=find_packages(),
-    {% if cookiecutter.use_cython == 'y' %}cmdclass={
-        "build_ext": build_ext
-    },
+    {% if cookiecutter.use_cython == 'y' %}cmdclass={"build_ext": build_ext},
     ext_modules=ext_modules,{% endif %}
     install_requires=read_requirements("requirements/publish.txt"),
     entry_points={

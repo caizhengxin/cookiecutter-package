@@ -2,7 +2,6 @@
 {% for _ in cookiecutter.project_name %}={% endfor %}
 {{ cookiecutter.project_name.capitalize()|replace('-', ' ') }}
 {% for _ in cookiecutter.project_name %}={% endfor %}
-
 {% if is_open_source %}
 .. image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_name }}.svg
         :target: https://pypi.python.org/pypi/{{ cookiecutter.project_name }}
@@ -20,21 +19,19 @@
 .. image:: https://readthedocs.org/projects/{{ cookiecutter.project_name }}/badge/?version=latest
         :target: https://{{ cookiecutter.project_name }}.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
-{% endif %}
+
 .. image:: https://img.shields.io/github/languages/code-size/caizhengxin/{{ cookiecutter.project_name }}
         :target: https://github.com/caizhengxin/{{ cookiecutter.project_name }}
-
+{% endif %}
 .. image:: https://img.shields.io/pypi/l/{{ cookiecutter.project_name }}
         :target: https://github.com/caizhengxin/{{ cookiecutter.project_name }}/blob/master/LICENSE
 
 {{ cookiecutter.description }}
-
 {% if is_open_source %}
 * Github repo: https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}
 * Documentation: https://{{ cookiecutter.project_name }}.readthedocs.io
 * Free software: {{ cookiecutter.open_source_license }}
 {% endif %}
-
 Features
 --------
 
