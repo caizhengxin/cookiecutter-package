@@ -3,5 +3,4 @@ include requirements.txt
 include MANIFEST.in
 
 recursive-include requirements *.txt
-global-exclude *.pyc
 {% if cookiecutter.use_cython == 'y' %}recursive-include src *.h{% endif %}
