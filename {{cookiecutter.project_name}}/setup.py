@@ -83,10 +83,6 @@ setup(
     },
     include_package_data=True,  # MANIFEST.in
     # scripts=["xxx.py"],
-    setup_requires=[
-        "setuptools",
-        "Cython",
-    ],
     project_urls={
         "Documentation": "https://{{ cookiecutter.project_name }}.readthedocs.io",
         "Source Code": "https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}",
