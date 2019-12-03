@@ -2,11 +2,17 @@
 Cookiecutter Package
 ====================
 
+.. image:: https://img.shields.io/badge/cookiecutter-cookiecutter--package-brightgreen.svg?style=flat-square
+    :target: https://github.com/caizhengxin/cookiecutter-package/
+
 .. image:: https://api.travis-ci.com/caizhengxin/cookiecutter-package.svg
     :target: https://travis-ci.org/caizhengxin/cookiecutter-package
 
-.. image:: https://img.shields.io/github/languages/code-size/caizhengxin/cookiecutter-package
+.. image:: https://img.shields.io/github/languages/code-size/caizhengxin/cookiecutter-package.svg?style=flat-square
     :target: https://github.com/caizhengxin/cookiecutter-package
+
+.. image:: https://img.shields.io/github/license/caizhengxin/cookiecutter-package.svg?style=flat-square
+    :target: ./LICENSE
 
 Cookiecutter_ template for a Python package.
 
