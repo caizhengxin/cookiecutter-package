@@ -32,7 +32,6 @@ Features
 * Pytest_
 * Flake8_
 * Github/Gitee/Gitlab
-* Logging_
 
 Installation
 ------------
@@ -57,7 +56,7 @@ Setting ``vim ~/.pypirc``::
 .. code-block:: console
 
     $ pip3 install twine
-    $ python3 setup sdist
+    $ python setup.py sdist bdist_wheel
     $ twine upload dist/*
 
 Demo

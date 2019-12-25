@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 import os
 {% if cookiecutter.use_cython == 'y' %}import glob{% endif %}
 
@@ -14,7 +13,7 @@ with open('README.rst') as f:
 
 def read_requirements(path):
     """
-    递归读取requirements
+    Read requirements
 
     :param path: path
     """
@@ -28,7 +27,7 @@ def read_requirements(path):
             if "-r" in ir:
                 path = os.path.join(os.path.split(path)[0], ir.split(" ")[1])
                 requires.extend(read_requirements(path))
-            else:
+            elif "git" not in ir:
                 ir and requires.append(ir)
 
     return requires
@@ -78,11 +77,14 @@ setup(
     install_requires=read_requirements("requirements/publish.txt"),
     entry_points={
         "console_scripts": [
-            "{{ cookiecutter.project_slug }} = {{ cookiecutter.project_slug }}.command:main",
+            "{{ cookiecutter.project_slug }} = {{ cookiecutter.project_slug }}.cli:main",
         ],
     },
     include_package_data=True,  # MANIFEST.in
-    # scripts=["xxx.py"],
+    setup_requires=[
+        "setuptools",
+        "Cython",
+    ],
     project_urls={
         "Documentation": "https://{{ cookiecutter.project_name }}.readthedocs.io",
         "Source Code": "https://{{ cookiecutter.code_hosting }}.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}",
@@ -95,12 +97,9 @@ setup(
         'License :: OSI Approved :: {{ cookiecutter.open_source_license }} License',
         'Programming Language :: Python',
         'Programming Language :: Python :: Implementation',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Topic :: Software Development :: Libraries'
     ],
 )

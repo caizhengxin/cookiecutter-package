@@ -1,4 +1,4 @@
--r base.txt
+-r publish.txt
 
 pytest>=5.1.3
 coverage>=4.5.4

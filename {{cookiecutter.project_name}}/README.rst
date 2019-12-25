@@ -3,14 +3,14 @@
 {{ cookiecutter.project_name.capitalize()|replace('-', ' ') }}
 {% for _ in cookiecutter.project_name %}={% endfor %}
 {% if is_open_source %}
-.. image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_name }}.svg
+.. image:: https://img.shields.io/pypi/v/{{ cookiecutter.project_name }}.svg?branch=master
         :target: https://pypi.python.org/pypi/{{ cookiecutter.project_name }}
 {%- endif %}
 
-.. image:: https://img.shields.io/pypi/pyversions/{{ cookiecutter.project_name }}.svg
+.. image:: https://img.shields.io/pypi/pyversions/{{ cookiecutter.project_name }}.svg?branch=master
         :target: https://pypi/python.org/pypi/{{ cookiecutter.project_name }}
 
-.. image:: https://img.shields.io/pypi/dm/{{ cookiecutter.project_name }}.svg
+.. image:: https://img.shields.io/pypi/dm/{{ cookiecutter.project_name }}.svg?branch=master
         :target: https://pypi/python.org/pypi/{{ cookiecutter.project_name }}
 {% if cookiecutter.code_hosting == 'github' %}
 .. image:: https://api.travis-ci.com/{{ cookiecutter.code_hosting_username }}/{{ cookiecutter.project_name }}.svg?branch=master
