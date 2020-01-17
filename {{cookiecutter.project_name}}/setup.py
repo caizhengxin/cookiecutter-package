@@ -1,4 +1,5 @@
 import os
+import sys
 {% if cookiecutter.use_cython == 'y' %}import glob{% endif %}
 
 from setuptools import setup, find_packages
@@ -9,6 +10,20 @@ from Cython.Distutils import build_ext
 
 with open('README.rst') as f:
     long_description = f.read()
+
+
+def pip_install(packet_name: str) -> None:
+    """
+    Install packet
+
+    Args:
+        param packet_name (str): Packet name.
+
+    Returns:
+        void: None
+    """
+
+    os.system(f"{sys.executable}" -m pip install {packet_name})
 
 
 def read_requirements(path):
@@ -83,7 +98,6 @@ setup(
     include_package_data=True,  # MANIFEST.in
     setup_requires=[
         "setuptools",
-        "Cython",
     ],
     project_urls={
         "Documentation": "https://{{ cookiecutter.project_name }}.readthedocs.io",

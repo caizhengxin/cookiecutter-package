@@ -11,12 +11,10 @@ def main():
     """
 
     parser = argparse.ArgumentParser(description="{{ cookiecutter.project_name.capitalize() | replace('-', ' ') | replace('_', ' ')}}")
-    parser.add_argument("-v", "--version", type=str, help="Version")
+    parser.add_argument("-v", "--version", action='version', version=f'%(prog)s {__version__}', help="Version")
     args = parser.parse_args()
 
     print("[+]:", args)
-
-    print("[+]:", args.version)
 
 
 if __name__ == "__main__":

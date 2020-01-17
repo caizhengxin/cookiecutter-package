@@ -1,5 +1,0 @@
--r base.txt
-
-{% if cookiecutter.use_cython == 'y' %}
-Cython>=0.29.13
-{% endif %}
