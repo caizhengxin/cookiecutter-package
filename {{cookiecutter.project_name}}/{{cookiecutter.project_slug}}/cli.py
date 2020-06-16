@@ -6,8 +6,6 @@ from {{cookiecutter.project_slug}} import __version__
 def main():
     """
     {{ cookiecutter.project_name.capitalize() }}
-
-    :param output: Output file.
     """
 
     parser = argparse.ArgumentParser(description="{{ cookiecutter.project_name.capitalize() | replace('-', ' ') | replace('_', ' ')}}")
